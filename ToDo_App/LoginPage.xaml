@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_App.LoginPage"
+             Title="Login" Padding="20,0,20,20"
+             BackgroundColor="#2b2539"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Spacing="12" Padding="20" VerticalOptions="Center">
+                <Label Text="Taskly" TextColor="White" FontAttributes="Bold"
+                       HorizontalOptions="Center" FontSize="40" Margin="0,40,0,0"/>
+                <Border StrokeThickness="1" StrokeShape="RoundRectangle 55"
+                        HeightRequest="110" WidthRequest="110"
+                        HorizontalOptions="Center" Stroke="#ccc2ff">
+                    <Image Source="todo_logo.png" HeightRequest="100" WidthRequest="100" Aspect="AspectFit"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250"
+                        StrokeShape="RoundRectangle 8" Margin="0,30,0,0">
+                    <Entry x:Name="EmailInput" Keyboard="Email" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Email Address" Margin="15,0"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250"
+                        StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="PassInput" IsPassword="True" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Password" Margin="15,0"/>
+                </Border>
+                <Button Text="Sign In" Background="#ccc2ff" TextColor="#2b2539"
+                        FontAttributes="Bold" CornerRadius="8" HeightRequest="50"
+                        Clicked="OnLoginButtonClicked"/>
+                <Label Text="Don't have an account? Register" TextColor="#ccc2ff"
+                       HorizontalOptions="Center" FontSize="14" Margin="0,6,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterLabelTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

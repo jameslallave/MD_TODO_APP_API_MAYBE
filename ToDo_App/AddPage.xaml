@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_App.AddPage"
+             Title="Add Task" BackgroundColor="#2b2539">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Spacing="16" Padding="20">
+                <Label Text="New Task" FontSize="22" FontAttributes="Bold"
+                       TextColor="White" HorizontalTextAlignment="Center" Margin="0,16,0,8"/>
+                <Label Text="Title" TextColor="#ccc2ff" FontSize="13"/>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="TitleEntry" Keyboard="Default" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Task title" MaxLength="80" Margin="15,0"/>
+                </Border>
+                <Label Text="Details" TextColor="#ccc2ff" FontSize="13"/>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Editor x:Name="DetailsEditor" TextColor="White" PlaceholderColor="#aaa"
+                            Placeholder="Task details (optional)" HeightRequest="120"
+                            MaxLength="300" Margin="10,5"/>
+                </Border>
+                <Button Text="Add Task" Background="#ccc2ff" TextColor="#2b2539"
+                        FontAttributes="Bold" CornerRadius="10" HeightRequest="50"
+                        Margin="0,8,0,0" Clicked="AddToDoItem"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

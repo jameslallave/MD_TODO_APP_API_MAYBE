@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_App.RegisterPage"
+             Title="Register" Padding="20,0,20,20" BackgroundColor="#2b2539">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Spacing="12" Padding="20" VerticalOptions="Center">
+                <Label Text="Create Account" FontSize="28" HorizontalOptions="Center"
+                       FontAttributes="Bold" TextColor="White" Margin="0,20,0,10"/>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="UserRegisterInput" Keyboard="Default" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Username" Margin="15,0"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="EmailRegisterInput" Keyboard="Email" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Email Address" Margin="15,0"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="PassRegisterInput" IsPassword="True" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Password" Margin="15,0"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="ConfirmPassInput" IsPassword="True" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Confirm Password" Margin="15,0"/>
+                </Border>
+                <Button Text="Sign Up" Background="#ccc2ff" TextColor="#2b2539"
+                        FontAttributes="Bold" CornerRadius="8" HeightRequest="50"
+                        Clicked="OnRegisterButtonClicked"/>
+                <Label Text="Already have an account? Sign in" TextColor="#ccc2ff"
+                       HorizontalOptions="Center" FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginLabelTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

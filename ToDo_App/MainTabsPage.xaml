@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_App.MainTabsPage"
+             BackgroundColor="#2b2539"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <!-- Tab Content Area -->
+        <ContentView x:Name="TabContent" Grid.Row="0"/>
+
+        <!-- Bottom Tab Bar -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,*,*"
+              BackgroundColor="#1e1a2e"
+              Padding="0,8">
+
+            <!-- ToDo Tab -->
+            <VerticalStackLayout Grid.Column="0"
+                                 Spacing="2"
+                                 HorizontalOptions="Center">
+                <Label x:Name="IconTodo"
+                       Text="&#x1F4CB;"
+                       FontSize="22"
+                       HorizontalOptions="Center"/>
+                <Label x:Name="LabelTodo"
+                       Text="ToDo"
+                       FontSize="11"
+                       HorizontalOptions="Center"
+                       TextColor="#ccc2ff"
+                       FontAttributes="Bold"/>
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTodoTabTapped"/>
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <!-- Completed Tab -->
+            <VerticalStackLayout Grid.Column="1"
+                                 Spacing="2"
+                                 HorizontalOptions="Center">
+                <Label x:Name="IconCompleted"
+                       Text="&#x2714;"
+                       FontSize="22"
+                       HorizontalOptions="Center"/>
+                <Label x:Name="LabelCompleted"
+                       Text="Completed"
+                       FontSize="11"
+                       HorizontalOptions="Center"
+                       TextColor="#666"/>
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCompletedTabTapped"/>
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <!-- Profile Tab -->
+            <VerticalStackLayout Grid.Column="2"
+                                 Spacing="2"
+                                 HorizontalOptions="Center">
+                <Label x:Name="IconProfile"
+                       Text="&#x1F464;"
+                       FontSize="22"
+                       HorizontalOptions="Center"/>
+                <Label x:Name="LabelProfile"
+                       Text="Profile"
+                       FontSize="11"
+                       HorizontalOptions="Center"
+                       TextColor="#666"/>
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileTabTapped"/>
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>
