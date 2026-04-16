@@ -10,7 +10,11 @@
                        FontAttributes="Bold" TextColor="White" Margin="0,20,0,10"/>
                 <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
                     <Entry x:Name="UserRegisterInput" Keyboard="Default" TextColor="White"
-                           PlaceholderColor="#aaa" Placeholder="Username" Margin="15,0"/>
+                           PlaceholderColor="#aaa" Placeholder="First Name" Margin="15,0"/>
+                </Border>
+                <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
+                    <Entry x:Name="LastNameRegisterInput" Keyboard="Default" TextColor="White"
+                           PlaceholderColor="#aaa" Placeholder="Last Name" Margin="15,0"/>
                 </Border>
                 <Border Stroke="#555" StrokeThickness="1" Background="#3a3250" StrokeShape="RoundRectangle 8">
                     <Entry x:Name="EmailRegisterInput" Keyboard="Email" TextColor="White"

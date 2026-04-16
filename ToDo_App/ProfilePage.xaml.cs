@@ -43,6 +43,21 @@ public partial class ProfilePage : ContentPage
         // Clear user data
         AppService.ClearUserData();
         
-        await Shell.Current.GoToAsync("//LoginPage");
+        // Navigate back to LoginPage
+        try
+        {
+            // First pop any navigation stack
+            if (Navigation.NavigationStack.Count > 1)
+            {
+                await Navigation.PopToRootAsync();
+            }
+            
+            // Then navigate to LoginPage via Shell
+            await Shell.Current.GoToAsync("LoginPage");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlertAsync("Error", $"Sign out error: {ex.Message}", "OK");
+        }
     }
 }

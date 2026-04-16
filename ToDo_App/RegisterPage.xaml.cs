@@ -6,14 +6,15 @@ public partial class RegisterPage : ContentPage
     private async void OnRegisterButtonClicked(object sender, EventArgs e)
     {
         string firstName = UserRegisterInput.Text?.Trim() ?? string.Empty;
-        string lastName  = string.Empty; // Optional - API can accept empty
+        string lastName  = LastNameRegisterInput.Text?.Trim() ?? string.Empty;
         string email     = EmailRegisterInput.Text?.Trim() ?? string.Empty;
         string password  = PassRegisterInput.Text?.Trim() ?? string.Empty;
         string confirm   = ConfirmPassInput.Text?.Trim() ?? string.Empty;
 
         // Validate all fields are filled
-        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(email) || 
-            string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirm))
+        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || 
+            string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password) || 
+            string.IsNullOrWhiteSpace(confirm))
         {
             await DisplayAlertAsync("Error", "Please fill in all fields.", "OK");
             return;
